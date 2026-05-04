@@ -107,7 +107,7 @@ class BigQueryConnection
         }
 
         foreach ($queryResults->rows() as $row) {
-            $data[] = $row;
+            $data[] = (object) $row;
         }
 
         return collect($data ?? []);
